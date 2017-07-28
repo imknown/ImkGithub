@@ -1,42 +1,184 @@
 apply plugin: 'com.android.application'
 
 apply plugin: 'kotlin-android'
-
 apply plugin: 'kotlin-android-extensions'
 
+// apply plugin: 'AndResGuard'
+
+// apply plugin: 'blockcanaryex'
+
+def myVersionCode = 1
+def myVersionName = "0.0.1"
+def myVersionNameSuffix = ".0"
+
 android {
-    compileSdkVersion 26
-    buildToolsVersion "26.0.1"
+    compileSdkVersion androidBuild.compileSdkVersion
+    buildToolsVersion androidBuild.buildToolsVersion
+
     defaultConfig {
         applicationId "net.imknown.imkgithub"
-        minSdkVersion 21
-        targetSdkVersion 26
-        versionCode 1
-        versionName "1.0"
+
+        minSdkVersion androidBuild.minSdkVersion
+        targetSdkVersion androidBuild.targetSdkVersionForNoRuntimePermission
+
+        versionCode myVersionCode
+        versionName myVersionName
+
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        // region [Packaging]
+        // setProperty("archivesBaseName", "MyGithub-$versionName")
+        archivesBaseName = 'MyGithub'
+
+        manifestPlaceholders = [
+                BAIDU_APP_KEY: 'xxx',
+
+                UMENG_APP_KEY: "xxx",
+
+                JPUSH_PKGNAME: applicationId,
+                JPUSH_APPKEY : "xxx", //JPush上注册的包名对应的appkey.
+                JPUSH_CHANNEL: "developer-default", //暂时填写默认值即可.
+        ]
+        // endregion
     }
+
+    signingConfigs {
+        release {
+            storeFile file(keysConfig.release.storeFile)
+            storePassword keysConfig.release.storePassword
+            keyAlias keysConfig.release.keyAlias
+            keyPassword keysConfig.release.keyPassword
+        }
+
+        debug {
+            storeFile file(keysConfig.debug.storeFile)
+            storePassword keysConfig.debug.storePassword
+            keyAlias keysConfig.debug.keyAlias
+            keyPassword keysConfig.debug.keyPassword
+        }
+    }
+
     buildTypes {
         release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            minifyEnabled true
+            shrinkResources true
+
+            proguardFiles getDefaultProguardFile('proguard-android.txt'),
+                    "$rootDir/ZOthers/proguard/proguard-rules-base.pro",
+                    'proguard-rules.pro'
+            // local.properties: ${sdk.dir}/tools/proguard/proguard-android.txt
+
+            signingConfig signingConfigs.release
+
+            ndk {
+                abiFilters 'armeabi-v7a', 'arm64-v8a'
+            }
+
+            manifestPlaceholders = [UMENG_APP_KEY: "xxx"]
+        }
+
+        debug {
+            debuggable true
+            jniDebuggable true
+
+            signingConfig signingConfigs.debug
+
+            versionNameSuffix myVersionNameSuffix
+
+            ndk {
+                abiFilters 'armeabi-v7a', 'arm64-v8a', 'x86', 'x86_64'
+            }
+        }
+
+//        buildTypes.each {
+//            it.buildConfigField 'boolean', 'isProductEnv', is_product_env
+//
+//            it.buildConfigField 'String', 'urlProduct', url_product
+//            it.buildConfigField 'String', 'urlProductImage', url_product_image
+//            it.buildConfigField 'String', 'urlTest', url_test
+//            it.buildConfigField 'String', 'urlTestImage', url_test_image
+//        }
+    }
+
+//    applicationVariants.all { variant ->
+//        renameAPKs(variant, defaultConfig, buildType, signingConfig, productFlavors);
+//    }
+
+    // region [Flavors]
+    flavorDimensions flavorDimensionsConfig.default
+
+    productFlavors {
+        AOfficial {
+            // 官方
+            dimension flavorDimensionsConfig.default
+        }
+
+        BOthers {
+            dimension flavorDimensionsConfig.default
+        }
+    }
+
+    productFlavors.all {
+        flavor -> flavor.manifestPlaceholders = [UMENG_CHANNEL_VALUE: name]
+    }
+    // endregion
+
+    sourceSets {
+        main {
+            // jniLibs.srcDirs = ['libs']
+
+            res.srcDirs = [
+                    'src/main/res',
+
+                    'src/main/java/net/imknown/imkgithub/ui/register/',
+                    'src/main/java/net/imknown/imkgithub/ui/login/',
+            ]
         }
     }
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    apply from: "$rootDir/ZOthers/gradle/testDependencies.gradle"
 
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    // region [Files]
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(':ZMainLib:ImkCode')
+    // endregion
 
     // region [Support]
-    implementation 'com.android.support:appcompat-v7:26.0.0'
-    implementation 'com.android.support:design:26.0.0'
-    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    implementation "com.android.support:appcompat-v7:$supportLibs.supportVersion"
+    implementation "com.android.support:design:$supportLibs.supportVersion"
+    implementation "com.android.support.constraint:constraint-layout:$supportLibs.constraintVersion"
     // endregion
 
     // region [Test]
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.0'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.0'
+    // endregion
+
+    // region [Debug]
+    debugCompile "com.squareup.leakcanary:leakcanary-android:$thirdParties.leakCanary"
+    releaseCompile "com.squareup.leakcanary:leakcanary-android-no-op:$thirdParties.leakCanary"
+    testCompile "com.squareup.leakcanary:leakcanary-android-no-op:$thirdParties.leakCanary"
+
+    debugCompile "com.github.markzhai:blockcanary-android:$thirdParties.blockCanary"
+    releaseCompile "com.github.markzhai:blockcanary-no-op:$thirdParties.blockCanary"
+    testCompile "com.github.markzhai:blockcanary-no-op:$thirdParties.blockCanary"
+
+    debugCompile "com.letv.sarrsdesktop:BlockCanaryExJRT:$thirdParties.blockCanaryEx"
+    releaseCompile "com.letv.sarrsdesktop:BlockCanaryExJRTNoOp:$thirdParties.blockCanaryEx"
+    testCompile "com.letv.sarrsdesktop:BlockCanaryExJRTNoOp:$thirdParties.blockCanaryEx"
+
+    // compile 'im.fir:fir-sdk:latest.integration@aar'
+    // endregion
+
+    // region [DI]
+    compile "com.jakewharton:butterknife:$thirdParties.butterKnife"
+    annotationProcessor "com.jakewharton:butterknife-compiler:$thirdParties.butterKnife"
+    // endregion
+
+    // region [Tools]
+    compile "com.google.code.gson:gson:$thirdParties.gson"
     // endregion
 }
