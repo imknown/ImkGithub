@@ -1,0 +1,28 @@
+apply plugin: 'com.android.library'
+
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+def myVersionCode = 1
+def myVersionName = "1.0.0"
+def myVersionNameSuffix = ".0"
+
+android {
+    compileSdkVersion androidBuild.compileSdkVersion
+    buildToolsVersion androidBuild.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion androidBuild.minSdkVersion
+        targetSdkVersion androidBuild.targetSdkVersion
+
+        versionCode myVersionCode
+        versionName myVersionName
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+}
+
+dependencies {
+    apply from: "$rootDir/ZOthers/gradle/testDependencies.gradle"
+    apply from: "$rootDir/ZOthers/gradle/kotlinDependencies.gradle"
+}
