@@ -40,7 +40,7 @@ ext {
             gson                         : '2.8.1',
 
             // https://github.com/JakeWharton/butterknife
-            butterKnife                  : '8.5.1',
+            butterKnife                  : '8.6.0',
 
             // https://github.com/CymChad/BaseRecyclerViewAdapterHelper/releases
             baseRecyclerViewAdapterHelper: '2.9.20',
