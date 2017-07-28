@@ -1,1 +1,17 @@
+// region [3th party]
+// include ':ZLib:sinaWeibo'
+// endregion
+
+// region [Sample]
+// include ':ZSample:libSample01'
+// endregion
+
+// region [Business]
+include ':ZMainLib:ImkCode'
+// include ':ZMain:ImkGithub'
 include ':app'
+// endregion
+
+// region [Others]
+include ':ZOthers'
+// endregion
