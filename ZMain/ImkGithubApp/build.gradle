@@ -185,5 +185,9 @@ dependencies {
     compile "com.squareup.retrofit2:retrofit:$thirdParties.retrofit2"
     compile "com.squareup.retrofit2:converter-gson:$thirdParties.retrofit2"
     compile "com.google.code.gson:gson:$thirdParties.gson"
+
+    compile "io.reactivex.rxjava2:rxjava:$thirdParties.rxJava"
+    compile "io.reactivex.rxjava2:rxandroid:$thirdParties.rxAndroid"
+    compile "io.reactivex.rxjava2:rxkotlin:$thirdParties.rxKotlin"
     // endregion
 }

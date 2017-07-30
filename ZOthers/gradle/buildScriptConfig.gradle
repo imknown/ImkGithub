@@ -42,6 +42,15 @@ ext {
             // https://github.com/google/gson
             gson                         : '2.8.1',
 
+            // https://github.com/ReactiveX/RxJava
+            rxJava                       : '2.1.2',
+            // https://github.com/ReactiveX/RxAndroid
+            rxAndroid                    : '2.0.1',
+            // https://github.com/ReactiveX/RxKotlin
+            rxKotlin                     : '2.1.0',
+            // https://github.com/JakeWharton/RxBinding
+            rxBinding                    : '2.0.0',
+
             // https://github.com/JakeWharton/butterknife
             butterKnife                  : '8.6.0',
 
