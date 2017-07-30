@@ -176,6 +176,9 @@ dependencies {
     // region [DI]
     compile "com.jakewharton:butterknife:$thirdParties.butterKnife"
     annotationProcessor "com.jakewharton:butterknife-compiler:$thirdParties.butterKnife"
+
+    compile "com.google.dagger:dagger:$thirdParties.dagger2"
+    annotationProcessor "com.google.dagger:dagger-compiler:$thirdParties.dagger2"
     // endregion
 
     // region [Tools]

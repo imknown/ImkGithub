@@ -42,6 +42,9 @@ ext {
             // https://github.com/JakeWharton/butterknife
             butterKnife                  : '8.6.0',
 
+            // https://github.com/google/dagger
+            dagger2                      : '2.11',
+
             // https://github.com/CymChad/BaseRecyclerViewAdapterHelper/releases
             baseRecyclerViewAdapterHelper: '2.9.20',
     ]
