@@ -36,6 +36,9 @@ ext {
             blockCanaryExGradlePlugin    : '0.9.9.2',
             blockCanaryEx                : '0.9.9.1',
 
+            // https://github.com/square/retrofit
+            retrofit2                    : '2.3.0',
+
             // https://github.com/google/gson
             gson                         : '2.8.1',
 

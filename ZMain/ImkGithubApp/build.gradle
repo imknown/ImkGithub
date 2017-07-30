@@ -182,6 +182,7 @@ dependencies {
     // endregion
 
     // region [Tools]
+    compile "com.squareup.retrofit2:retrofit:$thirdParties.retrofit2"
     compile "com.google.code.gson:gson:$thirdParties.gson"
     // endregion
 }
