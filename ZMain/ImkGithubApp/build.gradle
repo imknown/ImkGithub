@@ -158,37 +158,37 @@ dependencies {
     // endregion
 
     // region [Debug]
-    debugCompile "com.squareup.leakcanary:leakcanary-android:$thirdParties.leakCanary"
-    releaseCompile "com.squareup.leakcanary:leakcanary-android-no-op:$thirdParties.leakCanary"
-    testCompile "com.squareup.leakcanary:leakcanary-android-no-op:$thirdParties.leakCanary"
+    debugImplementation "com.squareup.leakcanary:leakcanary-android:$thirdParties.leakCanary"
+    releaseImplementation "com.squareup.leakcanary:leakcanary-android-no-op:$thirdParties.leakCanary"
+    testImplementation "com.squareup.leakcanary:leakcanary-android-no-op:$thirdParties.leakCanary"
 
-    debugCompile "com.github.markzhai:blockcanary-android:$thirdParties.blockCanary"
-    releaseCompile "com.github.markzhai:blockcanary-no-op:$thirdParties.blockCanary"
-    testCompile "com.github.markzhai:blockcanary-no-op:$thirdParties.blockCanary"
+    debugImplementation "com.github.markzhai:blockcanary-android:$thirdParties.blockCanary"
+    releaseImplementation "com.github.markzhai:blockcanary-no-op:$thirdParties.blockCanary"
+    testImplementation "com.github.markzhai:blockcanary-no-op:$thirdParties.blockCanary"
 
-    debugCompile "com.letv.sarrsdesktop:BlockCanaryExJRT:$thirdParties.blockCanaryEx"
-    releaseCompile "com.letv.sarrsdesktop:BlockCanaryExJRTNoOp:$thirdParties.blockCanaryEx"
-    testCompile "com.letv.sarrsdesktop:BlockCanaryExJRTNoOp:$thirdParties.blockCanaryEx"
+    debugImplementation "com.letv.sarrsdesktop:BlockCanaryExJRT:$thirdParties.blockCanaryEx"
+    releaseImplementation "com.letv.sarrsdesktop:BlockCanaryExJRTNoOp:$thirdParties.blockCanaryEx"
+    testImplementation "com.letv.sarrsdesktop:BlockCanaryExJRTNoOp:$thirdParties.blockCanaryEx"
 
-    // compile 'im.fir:fir-sdk:latest.integration@aar'
+    // implementation 'im.fir:fir-sdk:latest.integration@aar'
     // endregion
 
     // region [DI]
-    compile "com.jakewharton:butterknife:$thirdParties.butterKnife"
+    implementation "com.jakewharton:butterknife:$thirdParties.butterKnife"
     annotationProcessor "com.jakewharton:butterknife-compiler:$thirdParties.butterKnife"
 
-    compile "com.google.dagger:dagger:$thirdParties.dagger2"
+    implementation "com.google.dagger:dagger:$thirdParties.dagger2"
     annotationProcessor "com.google.dagger:dagger-compiler:$thirdParties.dagger2"
     // endregion
 
     // region [Tools]
-    compile "com.squareup.retrofit2:retrofit:$thirdParties.retrofit2"
-    compile "com.squareup.retrofit2:converter-gson:$thirdParties.retrofit2"
-    compile "com.google.code.gson:gson:$thirdParties.gson"
+    implementation "com.squareup.retrofit2:retrofit:$thirdParties.retrofit2"
+    implementation "com.squareup.retrofit2:converter-gson:$thirdParties.retrofit2"
+    implementation "com.google.code.gson:gson:$thirdParties.gson"
 
-    compile "io.reactivex.rxjava2:rxjava:$thirdParties.rxJava"
-    compile "io.reactivex.rxjava2:rxandroid:$thirdParties.rxAndroid"
-    compile "io.reactivex.rxjava2:rxkotlin:$thirdParties.rxKotlin"
+    implementation "io.reactivex.rxjava2:rxjava:$thirdParties.rxJava"
+    implementation "io.reactivex.rxjava2:rxandroid:$thirdParties.rxAndroid"
+    implementation "io.reactivex.rxjava2:rxkotlin:$thirdParties.rxKotlin"
 
     implementation "com.github.bumptech.glide:glide:$thirdParties.glide"
     annotationProcessor "com.github.bumptech.glide:compiler:$thirdParties.glide"
