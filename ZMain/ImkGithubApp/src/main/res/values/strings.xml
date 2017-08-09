@@ -1,5 +1,9 @@
 <resources>
     <string name="app_name">ImkGithub</string>
+    <string name="leak_canary_display_activity_label">ImkGithub Leak</string>
+    <string name="block_canary_display_activity_label">ImkGithub Block</string>
+    <string name="block_canary_ex_display_activity_label">ImkGithub BlockEx</string>
+
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
