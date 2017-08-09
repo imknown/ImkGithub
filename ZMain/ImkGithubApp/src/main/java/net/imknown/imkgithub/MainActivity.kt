@@ -3,7 +3,13 @@ package net.imknown.imkgithub
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
 import android.support.v7.app.AppCompatActivity
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.activity_main.*
+import net.imknown.imkgithub.web.Factory
+import net.imknown.imkgithub.web.url.OtherMiscUrl
+import net.imknown.imkgithub.web.url.UserUrl
+import org.jetbrains.anko.longToast
 
 class MainActivity : AppCompatActivity() {
 
@@ -30,5 +36,25 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
+
+        Factory.create<UserUrl>()
+                .getUserInfo()
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io())
+                .subscribe({
+                    message.text = it.name
+                }, {
+                    it.printStackTrace()
+                })
+
+        Factory.create<OtherMiscUrl>(String::class)
+                .getZen()
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io())
+                .subscribe({
+                    longToast("Github Zen:" + "\n" + it)
+                }, {
+                    it.printStackTrace()
+                })
     }
 }
