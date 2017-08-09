@@ -178,6 +178,7 @@ dependencies {
     // region [Tools]
     implementation "com.squareup.retrofit2:retrofit:$thirdParties.retrofit2"
     implementation "com.squareup.retrofit2:converter-gson:$thirdParties.retrofit2"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$thirdParties.retrofit2"
     implementation "com.google.code.gson:gson:$thirdParties.gson"
 
     implementation "io.reactivex.rxjava2:rxjava:$thirdParties.rxJava"
