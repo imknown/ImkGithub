@@ -139,6 +139,7 @@ android {
 
 dependencies {
     apply from: "$rootDir/ZOthers/gradle/testDependencies.gradle"
+    apply from: "$rootDir/ZOthers/gradle/kotlinDependencies.gradle"
 
     // region [Files]
     implementation fileTree(dir: 'libs', include: ['*.jar'])
