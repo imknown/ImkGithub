@@ -1,4 +1,4 @@
-package net.imknown.imkgithub
+package net.imknown.imkgithub.module
 
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
@@ -9,6 +9,7 @@ import com.bumptech.glide.request.RequestOptions
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.activity_main.*
+import net.imknown.imkgithub.R
 import net.imknown.imkgithub.web.Factory
 import net.imknown.imkgithub.web.url.OtherMiscUrl
 import net.imknown.imkgithub.web.url.UserUrl

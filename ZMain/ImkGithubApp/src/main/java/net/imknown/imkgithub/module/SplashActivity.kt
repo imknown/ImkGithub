@@ -1,8 +1,9 @@
-package net.imknown.imkgithub
+package net.imknown.imkgithub.module
 
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
+import net.imknown.imkgithub.R
 
 import net.imknown.imkgithub.mvp.BaseMvpPresenterActivity
 
