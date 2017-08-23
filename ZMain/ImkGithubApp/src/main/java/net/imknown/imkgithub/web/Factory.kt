@@ -11,7 +11,7 @@ import retrofit2.converter.gson.GsonConverterFactory
  */
 class Factory {
     companion object {
-        const val gankIOUrl = "https://api.github.com/"
+        const val URL_API_GITHUB = "https://api.github.com/"
 
         inline fun <reified T> create(converterFactoryType: Any = Gson::class): T {
             val retrofit = Retrofit.Builder()
@@ -21,7 +21,7 @@ class Factory {
                         String::class -> ToStringConverterFactory.create()
                         else -> throw IllegalArgumentException("ConverterFactory type is not supported now.")
                     })
-                    .baseUrl(gankIOUrl)
+                    .baseUrl(URL_API_GITHUB)
                     .build()
 
             return retrofit.create(T::class.java)
