@@ -3,9 +3,9 @@ package net.imknown.imkgithub.mvp
 import android.content.pm.ActivityInfo
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import android.widget.Toast
 import butterknife.ButterKnife
 import butterknife.Unbinder
+import org.jetbrains.anko.toast
 
 abstract class BaseMvpPresenterActivity : AppCompatActivity(), BaseMvpView {
     lateinit var unbinder: Unbinder
@@ -26,7 +26,7 @@ abstract class BaseMvpPresenterActivity : AppCompatActivity(), BaseMvpView {
 
     override fun showMessage(messageType: BaseMvpView.MessageType, message: String) {
         if (messageType === BaseMvpView.MessageType.Toast) {
-            Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+            toast(message)
         }
     }
 }
