@@ -3,9 +3,8 @@ package net.imknown.imkgithub.mvp
 
 import java.lang.ref.WeakReference
 
-abstract class BaseMvpPresenterImpl<MvpView : BaseMvpView>(mvpView: MvpView) : WeakReference<MvpView>(mvpView), BaseMvpPresenter<MvpView> {
-
-    protected var mvpViewRef: WeakReference<MvpView>? = null
+abstract class BaseMvpPresenterImpl<MvpView : BaseMvpView> : BaseMvpPresenter<MvpView> {
+    protected lateinit var mvpViewRef: WeakReference<MvpView>
         private set
 
     protected fun attachView(mvpView: MvpView) {
@@ -13,6 +12,6 @@ abstract class BaseMvpPresenterImpl<MvpView : BaseMvpView>(mvpView: MvpView) : W
     }
 
     protected fun detachView() {
-        super.clear()
+        this.mvpViewRef.clear()
     }
 }
