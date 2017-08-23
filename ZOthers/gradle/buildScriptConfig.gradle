@@ -9,7 +9,7 @@ ext {
     ]
 
     supportLibs = [
-            supportVersion   : '26.0.0',
+            supportVersion   : '26.0.1',
             constraintVersion: '1.0.2',
             multidexVersion  : '1.0.1'
     ]
