@@ -190,3 +190,38 @@ dependencies {
     annotationProcessor "com.github.bumptech.glide:compiler:$thirdParties.glide"
     // endregion
 }
+
+//andResGuard {
+//    // mappingFile = file("./resource_mapping.txt")
+//    mappingFile = null
+//    // It will be invalid when you sign apk with schemeV2
+//    use7zip = true
+//    useSign = true
+//    // it will keep the origin path of your resources when it's true
+//    keepRoot = false
+//    whiteList = [
+//            // your icon
+//            "R.drawable.icon",
+//            // for fabric
+//            "R.string.com.crashlytics.*",
+//            // for google-services
+//            "R.string.google_app_id",
+//            "R.string.gcm_defaultSenderId",
+//            "R.string.default_web_client_id",
+//            "R.string.ga_trackingId",
+//            "R.string.firebase_database_url",
+//            "R.string.google_api_key",
+//            "R.string.google_crash_reporting_api_key"
+//    ]
+//    compressFilePattern = [
+//            "*.png",
+//            "*.jpg",
+//            "*.jpeg",
+//            "*.gif",
+//            "resources.arsc"
+//    ]
+//    sevenzip {
+//        artifact = "com.tencent.mm:SevenZip:$thirdParties.andResGuardVersion"
+//        //path = "/usr/local/bin/7za"
+//    }
+//}
