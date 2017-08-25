@@ -27,7 +27,7 @@ ext {
             andResGuardVersion           : '1.2.3',
 
             // https://github.com/square/leakcanary
-            leakCanary                   : '1.5.1',
+            leakCanary                   : '1.5.2',
 
             // https://github.com/markzhai/AndroidPerformanceMonitor
             blockCanary                  : '1.5.0',
