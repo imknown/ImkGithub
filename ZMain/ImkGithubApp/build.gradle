@@ -5,7 +5,7 @@ apply plugin: 'kotlin-android-extensions'
 
 // apply plugin: 'AndResGuard'
 
-// apply plugin: 'blockcanaryex'
+apply plugin: 'blockcanaryex'
 
 def myVersionCode = 1
 def myVersionName = "0.0.1"
