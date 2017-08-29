@@ -1,7 +1,7 @@
 package net.imknown.imkgithub.web
 
 import com.google.gson.Gson
-import net.imknown.imkgithub.web.converter.ToStringConverterFactory
+import net.imknown.imkgithub.web.converter.StringConverterFactory
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
@@ -18,7 +18,7 @@ class Factory {
                     .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                     .addConverterFactory(when (converterFactoryType) {
                         Gson::class -> GsonConverterFactory.create()
-                        String::class -> ToStringConverterFactory.create()
+                        String::class -> StringConverterFactory.create()
                         else -> throw IllegalArgumentException("ConverterFactory type is not supported now.")
                     })
                     .baseUrl(URL_API_GITHUB)

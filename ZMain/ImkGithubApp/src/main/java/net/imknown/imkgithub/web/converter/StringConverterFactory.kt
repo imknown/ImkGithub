@@ -27,7 +27,7 @@ import java.lang.reflect.Type
  * https://github.com/square/retrofit/issues/1151
  * https://github.com/zhimin115200/Retrofit_StringAndJsonConverter
  */
-class ToStringConverterFactory : Converter.Factory() {
+class StringConverterFactory : Converter.Factory() {
 
     override fun responseBodyConverter(type: Type?, annotations: Array<Annotation>?, retrofit: Retrofit?): Converter<ResponseBody, *>? {
         if (String::class.java == type) {
@@ -46,8 +46,8 @@ class ToStringConverterFactory : Converter.Factory() {
     companion object {
         private val MEDIA_TYPE = MediaType.parse("text/plain")
 
-        fun create(): ToStringConverterFactory {
-            return ToStringConverterFactory()
+        fun create(): StringConverterFactory {
+            return StringConverterFactory()
         }
     }
 }
