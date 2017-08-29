@@ -29,18 +29,16 @@ import java.lang.reflect.Type
  */
 class StringConverterFactory : Converter.Factory() {
 
-    override fun responseBodyConverter(type: Type?, annotations: Array<Annotation>?, retrofit: Retrofit?): Converter<ResponseBody, *>? {
-        if (String::class.java == type) {
-            return Converter<ResponseBody, String> { value -> value.string() }
+    override fun responseBodyConverter(type: Type, annotations: Array<Annotation>, retrofit: Retrofit): Converter<ResponseBody, *> {
+        return Converter<ResponseBody, String> {
+            it.string()
         }
-        return null
     }
 
-    override fun requestBodyConverter(type: Type?, parameterAnnotations: Array<Annotation>?, methodAnnotations: Array<Annotation>?, retrofit: Retrofit?): Converter<*, RequestBody>? {
-        if (String::class.java == type) {
-            return Converter<String, RequestBody> { value -> RequestBody.create(MEDIA_TYPE, value) }
+    override fun requestBodyConverter(type: Type, parameterAnnotations: Array<Annotation>, methodAnnotations: Array<Annotation>, retrofit: Retrofit): Converter<*, RequestBody> {
+        return Converter<String, RequestBody> {
+            RequestBody.create(MEDIA_TYPE, it)
         }
-        return null
     }
 
     companion object {
