@@ -23,7 +23,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".module.MainActivity" />
+        <activity android:name=".module.main.MainActivity" />
     </application>
 
 </manifest>

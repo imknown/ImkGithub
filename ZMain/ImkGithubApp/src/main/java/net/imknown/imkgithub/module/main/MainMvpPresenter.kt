@@ -1,4 +1,4 @@
-package net.imknown.imkgithub.module
+package net.imknown.imkgithub.module.main
 
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers

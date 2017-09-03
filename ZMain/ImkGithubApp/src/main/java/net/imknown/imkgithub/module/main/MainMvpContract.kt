@@ -1,4 +1,4 @@
-package net.imknown.imkgithub.module
+package net.imknown.imkgithub.module.main
 
 import net.imknown.imkgithub.mvp.BaseMvpPresenterImpl
 import net.imknown.imkgithub.mvp.BaseMvpView

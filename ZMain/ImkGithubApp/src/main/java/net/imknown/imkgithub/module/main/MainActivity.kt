@@ -1,4 +1,4 @@
-package net.imknown.imkgithub.module
+package net.imknown.imkgithub.module.main
 
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
