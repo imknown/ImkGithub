@@ -61,7 +61,7 @@ ext {
             baseRecyclerViewAdapterHelper: '2.9.28',
 
             // https://github.com/bumptech/glide
-            glide                        : '4.0.0',
+            glide                        : '4.1.1',
     ]
 
     keysConfig = [
