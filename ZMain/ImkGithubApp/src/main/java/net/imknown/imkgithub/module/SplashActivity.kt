@@ -5,11 +5,9 @@ import android.os.Bundle
 import android.os.Handler
 import net.imknown.imkgithub.R
 import net.imknown.imkgithub.module.main.MainActivity
+import net.imknown.imkgithub.mvp.BaseActivity
 
-import net.imknown.imkgithub.mvp.BaseMvpPresenterActivity
-
-class SplashActivity : BaseMvpPresenterActivity() {
-
+class SplashActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
