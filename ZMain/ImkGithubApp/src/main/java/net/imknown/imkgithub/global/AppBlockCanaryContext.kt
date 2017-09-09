@@ -1,4 +1,4 @@
-package net.imknown.imkgithub
+package net.imknown.imkgithub.global
 
 import android.content.Context
 import com.github.moduth.blockcanary.BlockCanaryContext

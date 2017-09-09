@@ -1,4 +1,4 @@
-package net.imknown.imkgithub
+package net.imknown.imkgithub.global
 
 import android.app.Application
 import android.content.Context
