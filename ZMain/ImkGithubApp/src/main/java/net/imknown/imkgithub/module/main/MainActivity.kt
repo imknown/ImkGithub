@@ -41,12 +41,11 @@ class MainActivity : BaseMvpPresenterActivity(), MainMvpContract.View {
 //                .subscribe({
 //                    message.text = it.name
 //
-//                    Glide.with(this)
+//                    GlideApp.with(this)
 //                            .load(it.avatarUrl)
-//                            .apply(RequestOptions()
-//                                    .placeholder(R.mipmap.ic_launcher)
-//                                    .error(R.mipmap.ic_launcher_round))
-//                            .transition(DrawableTransitionOptions.withCrossFade(android.R.anim.fade_in, 300))
+//                            .placeholder(R.mipmap.ic_launcher)
+//                            .error(R.mipmap.ic_launcher_round)
+//                            .transition(DrawableTransitionOptions.withCrossFade())
 //                            .into(ivAvatar)
 //                }, {
 //                    it.printStackTrace()
