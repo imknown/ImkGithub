@@ -16,7 +16,7 @@ class MainMvpPresenter(mvpView: MainMvpContract.View) : MainMvpContract.Presente
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
                 .subscribe({
-                    val mvpView = mvpViewRef.get()
+                    val mvpView = getViewRef().get()
                     mvpView?.showZen(it)
                 }, {
                     it.printStackTrace()

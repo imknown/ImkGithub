@@ -4,14 +4,17 @@ package net.imknown.imkgithub.mvp
 import java.lang.ref.WeakReference
 
 abstract class BaseMvpPresenterImpl<MvpView : BaseMvpView> : BaseMvpPresenter<MvpView> {
-    protected lateinit var mvpViewRef: WeakReference<MvpView>
-        private set
+    private lateinit var mvpViewRef: WeakReference<MvpView>
 
-    protected fun attachView(mvpView: MvpView) {
+    override fun attachView(mvpView: MvpView) {
         this.mvpViewRef = WeakReference(mvpView)
     }
 
-    protected fun detachView() {
+    override fun detachView() {
         this.mvpViewRef.clear()
+    }
+
+    override fun getViewRef(): WeakReference<MvpView> {
+        return mvpViewRef
     }
 }
