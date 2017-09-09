@@ -2,6 +2,7 @@ apply plugin: 'com.android.application'
 
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 // apply plugin: 'AndResGuard'
 
@@ -170,10 +171,10 @@ dependencies {
 
     // region [DI]
     implementation "com.jakewharton:butterknife:$thirdParties.butterKnife"
-    annotationProcessor "com.jakewharton:butterknife-compiler:$thirdParties.butterKnife"
+    kapt "com.jakewharton:butterknife-compiler:$thirdParties.butterKnife"
 
     implementation "com.google.dagger:dagger:$thirdParties.dagger2"
-    annotationProcessor "com.google.dagger:dagger-compiler:$thirdParties.dagger2"
+    kapt "com.google.dagger:dagger-compiler:$thirdParties.dagger2"
     // endregion
 
     // region [Tools]
@@ -187,7 +188,7 @@ dependencies {
     implementation "io.reactivex.rxjava2:rxkotlin:$thirdParties.rxKotlin"
 
     implementation "com.github.bumptech.glide:glide:$thirdParties.glide"
-    annotationProcessor "com.github.bumptech.glide:compiler:$thirdParties.glide"
+    kapt "com.github.bumptech.glide:compiler:$thirdParties.glide"
     // endregion
 }
 
