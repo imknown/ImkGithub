@@ -24,6 +24,12 @@
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
 
+# region [okhttp3]
+-dontwarn okhttp3.**
+-dontwarn okio.**
+-dontwarn javax.annotation.**
+# endregion
+
 # region [retrofit2]
 -dontwarn okio.**
 -dontwarn javax.annotation.**

@@ -36,6 +36,8 @@ ext {
             blockCanaryExGradlePlugin    : '0.9.9.5',
             blockCanaryEx                : '0.9.9.4',
 
+            // https://github.com/square/okhttp/
+            okhttp                       : '3.9.0',
             // https://github.com/square/retrofit
             retrofit2                    : '2.3.0',
 
