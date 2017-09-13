@@ -39,7 +39,7 @@ ext {
             // https://github.com/square/okhttp/
             okhttp                       : '3.9.0',
             // https://github.com/square/retrofit
-            retrofit2                    : '2.3.0',
+            retrofit                     : '2.3.0',
 
             // https://github.com/google/gson
             gson                         : '2.8.1',

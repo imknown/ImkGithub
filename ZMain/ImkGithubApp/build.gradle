@@ -181,9 +181,9 @@ dependencies {
     implementation "com.squareup.okhttp3:okhttp:$thirdParties.okhttp"
     implementation "com.squareup.okhttp3:logging-interceptor:$thirdParties.okhttp"
 
-    implementation "com.squareup.retrofit2:retrofit:$thirdParties.retrofit2"
-    implementation "com.squareup.retrofit2:converter-gson:$thirdParties.retrofit2"
-    implementation "com.squareup.retrofit2:adapter-rxjava2:$thirdParties.retrofit2"
+    implementation "com.squareup.retrofit2:retrofit:$thirdParties.retrofit"
+    implementation "com.squareup.retrofit2:converter-gson:$thirdParties.retrofit"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$thirdParties.retrofit"
 
     implementation "com.google.code.gson:gson:$thirdParties.gson"
 
