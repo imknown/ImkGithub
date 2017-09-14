@@ -2,6 +2,7 @@ package net.imknown.imkgithub.global
 
 import android.app.Application
 import android.content.Context
+import com.facebook.stetho.Stetho
 import com.github.moduth.blockcanary.BlockCanary
 import com.letv.sarrsdesktop.blockcanaryex.jrt.BlockCanaryEx
 import com.letv.sarrsdesktop.blockcanaryex.jrt.Config
@@ -27,6 +28,8 @@ class MyApplication : Application() {
             LeakCanary.install(this)
             BlockCanary.install(this, AppBlockCanaryContext()).start()
             BlockCanaryEx.install(Config(this))
+
+            Stetho.initializeWithDefaults(this)
         }
     }
 

@@ -1,5 +1,6 @@
 package net.imknown.imkgithub.web
 
+import com.facebook.stetho.okhttp3.StethoInterceptor
 import com.google.gson.Gson
 import net.imknown.imkgithub.web.converter.StringConverterFactory
 import okhttp3.OkHttpClient
@@ -23,6 +24,7 @@ class Factory {
 
             val client = OkHttpClient.Builder()
                     .addInterceptor(loggingInterceptor)
+                    .addNetworkInterceptor(StethoInterceptor())
                     .connectTimeout(15, TimeUnit.SECONDS)
                     .readTimeout(20, TimeUnit.SECONDS)
                     .writeTimeout(20, TimeUnit.SECONDS)

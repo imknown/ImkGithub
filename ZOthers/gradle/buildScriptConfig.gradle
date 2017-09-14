@@ -40,6 +40,8 @@ ext {
             okhttp                       : '3.9.0',
             // https://github.com/square/retrofit
             retrofit                     : '2.3.0',
+            // https://github.com/facebook/stetho
+            stetho                       : '1.5.0',
 
             // https://github.com/google/gson
             gson                         : '2.8.1',
