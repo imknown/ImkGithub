@@ -62,7 +62,7 @@ ext {
             dagger                       : '2.11',
 
             // https://github.com/CymChad/BaseRecyclerViewAdapterHelper/releases
-            baseRecyclerViewAdapterHelper: '2.9.30',
+            baseRecyclerViewAdapterHelper: '2.9.31',
 
             // https://github.com/bumptech/glide
             glide                        : '4.1.1',
