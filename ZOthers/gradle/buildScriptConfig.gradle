@@ -19,7 +19,10 @@ ext {
             kotlinVersion: '1.1.51',
 
             // https://github.com/Kotlin/anko/releases
-            ankoVersion  : '0.10.1'
+            ankoVersion  : '0.10.1',
+
+            // https://bintray.com/kotlin/kotlinx/kotlinx.coroutines
+            coroutines   : '0.20-alpha-2'
     ]
 
     thirdParties = [
