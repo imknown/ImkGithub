@@ -10,7 +10,7 @@ ext {
 
     supportLibs = [
             supportVersion   : '26.1.0',
-            constraintVersion: '1.1.0-beta2',
+            constraintVersion: '1.1.0-beta3',
             multidexVersion  : '1.0.1'
     ]
 
