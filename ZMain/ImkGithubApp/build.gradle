@@ -178,6 +178,8 @@ dependencies {
     implementation "com.squareup.okhttp3:okhttp:$thirdParties.okhttp"
     implementation "com.squareup.okhttp3:logging-interceptor:$thirdParties.okhttp"
     implementation "com.facebook.stetho:stetho-okhttp3:$thirdParties.stetho"
+    debugImplementation "com.readystatesoftware.chuck:library:$thirdParties.chuck"
+    releaseImplementation "com.readystatesoftware.chuck:library-no-op:$thirdParties.chuck"
 
     implementation "com.squareup.retrofit2:retrofit:$thirdParties.retrofit"
     implementation "com.squareup.retrofit2:converter-gson:$thirdParties.retrofit"

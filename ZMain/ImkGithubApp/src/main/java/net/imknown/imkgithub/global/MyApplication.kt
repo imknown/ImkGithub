@@ -23,7 +23,7 @@ class MyApplication : Application() {
         }
 
         if (ProcessUtils.isDefaultProcess(this)) {
-            sApplicationContext = applicationContext
+            sApplication = this
 
             LeakCanary.install(this)
             BlockCanary.install(this, AppBlockCanaryContext()).start()
@@ -34,6 +34,6 @@ class MyApplication : Application() {
     }
 
     companion object {
-        lateinit var sApplicationContext: Context
+        lateinit var sApplication: Context
     }
 }
