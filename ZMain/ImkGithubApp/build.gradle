@@ -140,6 +140,8 @@ android {
 
 dependencies {
     // region [Files]
+    apply from: "$rootDir/ZOthers/gradle/testDependencies.gradle"
+
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(':ZMainLib:ImkCode')
     // endregion
