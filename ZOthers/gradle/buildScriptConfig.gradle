@@ -2,7 +2,7 @@ ext {
     androidStudioGradlePluginVersion = '3.0.0'
 
     androidBuild = [
-            buildToolsVersion: '26.0.2',
+            buildToolsVersion: '27.0.0',
             minSdkVersion    : 17,
             compileSdkVersion: 26,
             targetSdkVersion : 26
