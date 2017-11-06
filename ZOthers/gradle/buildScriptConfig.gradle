@@ -29,10 +29,10 @@ ext {
 
             // https://github.com/Kotlin/anko
             // https://bintray.com/jetbrains/anko/anko
-            anko         : '0.10.1',
+            anko         : '0.10.2',
 
             // https://bintray.com/kotlin/kotlinx/kotlinx.coroutines
-            coroutines   : '0.20-alpha-2'
+            coroutines   : '0.20-alpha-8'
     ]
 
     thirdParties = [
