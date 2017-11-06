@@ -18,7 +18,7 @@ ext {
 
             constraintVersion: '1.1.0-beta3',
 
-            multidexVersion  : '1.0.1'
+            multidexVersion  : '1.0.2'
     ]
 
     kotlin = [
