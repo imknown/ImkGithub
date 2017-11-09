@@ -37,7 +37,7 @@ ext {
 
     thirdParties = [
             // https://github.com/shwenzhang/AndResGuard
-            andResGuardVersion           : '1.2.7',
+            andResGuardVersion           : '1.2.8',
 
             // https://github.com/square/leakcanary
             leakCanary                   : '1.5.4',
