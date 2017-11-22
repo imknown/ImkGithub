@@ -1,5 +1,5 @@
 ext {
-    androidStudioGradlePluginVersion = '3.0.0'
+    androidStudioGradlePluginVersion = '3.0.1'
 
     androidBuild = [
             // https://developer.android.com/studio/releases/build-tools.html#notes
