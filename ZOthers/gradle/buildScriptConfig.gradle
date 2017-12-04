@@ -22,10 +22,10 @@ ext {
     ]
 
     kotlin = [
-            // https://github.com/JetBrains/kotlin/blob/master/ChangeLog.md
+            // https://github.com/JetBrains/kotlin/releases
             // http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.jetbrains.kotlin%22
             // https://bintray.com/kotlin/kotlin-dev/kotlin
-            kotlinVersion: '1.1.51',
+            kotlinVersion: '1.2.0',
 
             // https://github.com/Kotlin/anko
             // https://bintray.com/jetbrains/anko/anko
