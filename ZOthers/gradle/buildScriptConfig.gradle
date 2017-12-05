@@ -29,7 +29,7 @@ ext {
 
             // https://github.com/Kotlin/anko
             // https://bintray.com/jetbrains/anko/anko
-            anko         : '0.10.2',
+            anko         : '0.10.3',
 
             // https://bintray.com/kotlin/kotlinx/kotlinx.coroutines
             coroutines   : '0.20-alpha-8'
