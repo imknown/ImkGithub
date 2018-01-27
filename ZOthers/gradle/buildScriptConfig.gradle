@@ -16,7 +16,7 @@ ext {
             // https://developer.android.com/topic/libraries/support-library/revisions.html
             supportVersion   : '27.0.2',
 
-            constraintVersion: '1.1.0-beta3',
+            constraintVersion: '1.1.0-beta4',
 
             multidexVersion  : '1.0.2'
     ]
