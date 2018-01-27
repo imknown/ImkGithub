@@ -4,9 +4,13 @@ buildscript {
     apply from: "$rootDir/ZOthers/gradle/buildScriptConfig.gradle"
 
     repositories {
-        google()
-//        jcenter()
-        maven { url 'http://maven.aliyun.com/nexus/content/groups/public' }
+        // google()
+        // maven { url 'https://maven.google.com/' }
+        maven { url 'https://dl.google.com/dl/android/maven2/' }
+
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+
+        // jcenter()
     }
 
     dependencies {
@@ -22,9 +26,13 @@ buildscript {
 
 allprojects {
     repositories {
-        google()
-//        jcenter()
-        maven { url 'http://maven.aliyun.com/nexus/content/groups/public' }
+        // google()
+        // maven { url 'https://maven.google.com/' }
+        maven { url 'https://dl.google.com/dl/android/maven2/' }
+
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+
+        // jcenter()
     }
 }
 
