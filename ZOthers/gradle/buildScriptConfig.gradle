@@ -25,14 +25,14 @@ ext {
             // https://github.com/JetBrains/kotlin/releases
             // http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.jetbrains.kotlin%22
             // https://bintray.com/kotlin/kotlin-dev/kotlin
-            kotlinVersion: '1.2.20',
+            kotlinVersion: '1.2.21',
 
             // https://github.com/Kotlin/anko
             // https://bintray.com/jetbrains/anko/anko
-            anko         : '0.10.3',
+            anko         : '0.10.4',
 
             // https://bintray.com/kotlin/kotlinx/kotlinx.coroutines
-            coroutines   : '0.21.2'
+            coroutines   : '0.22'
     ]
 
     thirdParties = [
