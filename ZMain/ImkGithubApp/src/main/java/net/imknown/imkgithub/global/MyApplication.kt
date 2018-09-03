@@ -2,10 +2,9 @@ package net.imknown.imkgithub.global
 
 import android.app.Application
 import android.content.Context
+import androidx.multidex.MultiDex
 import com.facebook.stetho.Stetho
 import com.github.moduth.blockcanary.BlockCanary
-import com.letv.sarrsdesktop.blockcanaryex.jrt.BlockCanaryEx
-import com.letv.sarrsdesktop.blockcanaryex.jrt.Config
 import com.squareup.leakcanary.LeakCanary
 import net.imknown.imkcode.utils.ProcessUtils
 
@@ -27,10 +26,15 @@ class MyApplication : Application() {
 
             LeakCanary.install(this)
             BlockCanary.install(this, AppBlockCanaryContext()).start()
-            BlockCanaryEx.install(Config(this))
+            // BlockCanaryEx.install(Config(this))
 
             Stetho.initializeWithDefaults(this)
         }
+    }
+
+    override fun attachBaseContext(base: Context) {
+        super.attachBaseContext(base)
+        MultiDex.install(this)
     }
 
     companion object {

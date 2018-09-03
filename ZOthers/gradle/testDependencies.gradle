@@ -2,8 +2,8 @@ dependencies {
     apply from: "$rootDir/ZOthers/gradle/buildScriptConfig.gradle"
 
     // region [Test]
-    testApi 'junit:junit:4.12'
-    androidTestApi 'com.android.support.test:runner:1.0.1'
-    androidTestApi 'com.android.support.test.espresso:espresso-core:3.0.1'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.1.0-alpha4'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0-alpha4'
     // endregion
 }

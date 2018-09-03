@@ -1,7 +1,7 @@
 package net.imknown.imkgithub.module.main
 
 import android.os.Bundle
-import android.support.design.widget.BottomNavigationView
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main.*
 import net.imknown.imkgithub.R
 import net.imknown.imkgithub.mvp.BaseMvpPresenterActivity
@@ -56,6 +56,6 @@ class MainActivity : BaseMvpPresenterActivity(), MainMvpContract.View {
     }
 
     override fun showZen(zen: String) {
-        longToast("Github Zen:" + "\n" + zen)
+        longToast("Github Zen:\n$zen")
     }
 }

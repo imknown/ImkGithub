@@ -1,6 +1,6 @@
 package net.imknown.imkgithub.mvp
 
-import android.support.annotation.IntDef
+import androidx.annotation.IntDef
 
 /**
  * @author Jinhe on 5/15/17.
@@ -8,10 +8,10 @@ import android.support.annotation.IntDef
 
 interface BaseMvpView {
     object MessageType {
-        const val Toast = 0x01L
+        const val Toast = 0x01
     }
 
-    fun showMessage(@MessageTypeDef messageType: Long, message: String)
+    fun showMessage(@MessageTypeDef messageType: Int, message: String)
 }
 
 @IntDef(BaseMvpView.MessageType.Toast)

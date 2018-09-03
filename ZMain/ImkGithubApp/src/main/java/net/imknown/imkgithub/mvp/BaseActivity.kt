@@ -1,11 +1,13 @@
 package net.imknown.imkgithub.mvp
 
+import android.annotation.SuppressLint
 import android.content.pm.ActivityInfo
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import butterknife.ButterKnife
 import butterknife.Unbinder
 
+@SuppressLint("Registered")
 open class BaseActivity : AppCompatActivity() {
     lateinit var unbinder: Unbinder
 

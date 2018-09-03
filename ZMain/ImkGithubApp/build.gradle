@@ -6,7 +6,7 @@ apply plugin: 'kotlin-kapt'
 
 apply plugin: 'AndResGuard'
 
-apply plugin: 'blockcanaryex'
+// apply plugin: 'blockcanaryex'
 
 def myVersionCode = 1
 def myVersionName = "0.0.1"
@@ -20,12 +20,12 @@ android {
         applicationId "net.imknown.imkgithub"
 
         minSdkVersion androidBuild.minSdkVersion
-        targetSdkVersion androidBuild.targetSdkVersionForNoRuntimePermission
+        targetSdkVersion androidBuild.targetSdkVersion
 
         versionCode myVersionCode
         versionName myVersionName
 
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
         // region [Packaging]
         // setProperty("archivesBaseName", "MyGithub-$versionName")
@@ -40,6 +40,8 @@ android {
                 JPUSH_APPKEY : "xxx", //JPush上注册的包名对应的appkey.
                 JPUSH_CHANNEL: "developer-default", //暂时填写默认值即可.
         ]
+
+        multiDexEnabled true
         // endregion
     }
 
@@ -144,13 +146,23 @@ dependencies {
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(':ZMainLib:ImkCode')
-    // endregion
+    // endregion [Files]
 
-    // region [Support]
-    implementation "com.android.support:appcompat-v7:$supportLibs.supportVersion"
-    implementation "com.android.support:design:$supportLibs.supportVersion"
-    implementation "com.android.support.constraint:constraint-layout:$supportLibs.constraintVersion"
-    // endregion
+    // region [OfficialLibs]
+    implementation "androidx.annotation:annotation:$officialLibs.normal"
+
+    implementation "androidx.appcompat:appcompat:$officialLibs.normal"
+    implementation "com.google.android.material:material:$officialLibs.material"
+    implementation "androidx.constraintlayout:constraintlayout:$officialLibs.constraintLayout"
+
+    implementation "androidx.multidex:multidex:$officialLibs.multidex"
+
+    implementation "androidx.cardview:cardview:$officialLibs.normal"
+    implementation "androidx.recyclerview:recyclerview:$officialLibs.normal"
+
+    // implementation "androidx.emoji:emoji-appcompat:$officialLibs.normal"
+    // implementation "androidx.emoji:emoji-bundled:$officialLibs.normal"
+    // endregion [OfficialLibs]
 
     // region [Debug]
     debugImplementation "com.squareup.leakcanary:leakcanary-android:$thirdParties.leakCanary"
@@ -161,12 +173,12 @@ dependencies {
     releaseImplementation "com.github.markzhai:blockcanary-no-op:$thirdParties.blockCanary"
     testImplementation "com.github.markzhai:blockcanary-no-op:$thirdParties.blockCanary"
 
-    debugImplementation "com.letv.sarrsdesktop:BlockCanaryExJRT:$thirdParties.blockCanaryEx"
-    releaseImplementation "com.letv.sarrsdesktop:BlockCanaryExJRTNoOp:$thirdParties.blockCanaryEx"
-    testImplementation "com.letv.sarrsdesktop:BlockCanaryExJRTNoOp:$thirdParties.blockCanaryEx"
+    // debugImplementation "com.letv.sarrsdesktop:BlockCanaryExJRT:$thirdParties.blockCanaryEx"
+    // releaseImplementation "com.letv.sarrsdesktop:BlockCanaryExJRTNoOp:$thirdParties.blockCanaryEx"
+    // testImplementation "com.letv.sarrsdesktop:BlockCanaryExJRTNoOp:$thirdParties.blockCanaryEx"
 
     // implementation 'im.fir:fir-sdk:latest.integration@aar'
-    // endregion
+    // endregion [Debug]
 
     // region [DI]
     implementation "com.jakewharton:butterknife:$thirdParties.butterKnife"
@@ -174,7 +186,7 @@ dependencies {
 
     implementation "com.google.dagger:dagger:$thirdParties.dagger"
     kapt "com.google.dagger:dagger-compiler:$thirdParties.dagger"
-    // endregion
+    // endregion [DI]
 
     // region [Tools]
     implementation "com.squareup.okhttp3:okhttp:$thirdParties.okhttp"
@@ -195,41 +207,29 @@ dependencies {
 
     implementation "com.github.bumptech.glide:glide:$thirdParties.glide"
     kapt "com.github.bumptech.glide:compiler:$thirdParties.glide"
-    // endregion
+    // endregion [Tools]
 }
 
 andResGuard {
     // mappingFile = file("./resource_mapping.txt")
     mappingFile = null
-    // It will be invalid when you sign apk with schemeV2
     use7zip = true
     useSign = true
     // it will keep the origin path of your resources when it's true
     keepRoot = false
 
     whiteList = [
-            // your icon
-            "R.drawable.icon",
-            // for fabric
-            "R.string.com.crashlytics.*",
-            // for google-services
-            "R.string.google_app_id",
-            "R.string.gcm_defaultSenderId",
-            "R.string.default_web_client_id",
-            "R.string.ga_trackingId",
-            "R.string.firebase_database_url",
-            "R.string.google_api_key",
-            "R.string.google_crash_reporting_api_key"
     ]
+
     compressFilePattern = [
             "*.png",
             "*.jpg",
             "*.jpeg",
             "*.gif",
-            "resources.arsc"
     ]
+
     sevenzip {
-        artifact = 'com.tencent.mm:SevenZip:1.2.6'
+        artifact = "com.tencent.mm:SevenZip:$thirdParties.andResGuard"
         //path = "/usr/local/bin/7za"
     }
 

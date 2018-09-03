@@ -1,27 +1,27 @@
 dependencies {
     apply from: "$rootDir/ZOthers/gradle/buildScriptConfig.gradle"
 
-    api "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin.kotlinVersion"
+    // region [Kotlin]
+    api "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin.kotlin"
 
     // region [Kotlin Anko]
     // Anko All
     api "org.jetbrains.anko:anko:$kotlin.anko"
 
-    /*
     // Anko Commons
-    api "org.jetbrains.anko:anko-commons:$kotlin.anko"
+    // api "org.jetbrains.anko:anko-commons:$kotlin.anko"
 
     // Anko Layouts
-    api "org.jetbrains.anko:anko-sdk25:$kotlin.anko"
+    // api "org.jetbrains.anko:anko-sdk25:$kotlin.anko"
     // sdk15, sdk19, sdk21, sdk23 are also available
-    api "org.jetbrains.anko:anko-appcompat-v7:$kotlin.anko"
+    // api "org.jetbrains.anko:anko-appcompat-v7:$kotlin.anko"
 
     // Coroutine listeners for Anko Layouts
-    api "org.jetbrains.anko:anko-sdk25-coroutines:$kotlin.anko"
-    api "org.jetbrains.anko:anko-appcompat-v7-couroutines:$kotlin.anko"
+    // api "org.jetbrains.anko:anko-sdk25-coroutines:$kotlin.anko"
+    // api "org.jetbrains.anko:anko-appcompat-v7-couroutines:$kotlin.anko"
 
     // Anko SQLite
-    api "org.jetbrains.anko:anko-sqlite:$kotlin.anko"
-    // endregion
-    */
+    // api "org.jetbrains.anko:anko-sqlite:$kotlin.anko"
+    // endregion [Kotlin Anko]
+    // endregion [Kotlin]
 }

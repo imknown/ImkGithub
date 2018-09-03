@@ -14,10 +14,10 @@ buildscript {
     }
 
     dependencies {
-        classpath "com.android.tools.build:gradle:$androidStudioGradlePluginVersion"
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin.kotlinVersion"
-        classpath "com.tencent.mm:AndResGuard-gradle-plugin:$thirdParties.andResGuardVersion"
-        classpath "com.letv.sarrsdesktop:BlockCanaryExPlugin:$thirdParties.blockCanaryExGradlePlugin"
+        classpath "com.android.tools.build:gradle:$androidStudioGradlePlugin"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin.kotlin"
+        classpath "com.tencent.mm:AndResGuard-gradle-plugin:$thirdParties.andResGuard"
+        // classpath "com.letv.sarrsdesktop:BlockCanaryExPlugin:$thirdParties.blockCanaryExGradlePlugin"
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
