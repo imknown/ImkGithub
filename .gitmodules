@@ -1,3 +1,2 @@
-[submodule "ImkCode"]
-	path = ZMainLib/ImkCode
+[submodule "ZMainLib/ImkCode"]
 	url = https://github.com/imknown/ImkCode.git

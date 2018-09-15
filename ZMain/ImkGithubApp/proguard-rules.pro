@@ -28,7 +28,7 @@
 -dontwarn okhttp3.**
 -dontwarn okio.**
 -dontwarn javax.annotation.**
-# endregion
+# endregion [okhttp3]
 
 # region [retrofit2]
 -dontwarn okio.**
@@ -42,7 +42,7 @@
 -keepattributes Signature
 # Retain declared checked exceptions for use by a Proxy instance.
 -keepattributes Exceptions
-# endregion
+# endregion [retrofit2]
 
 # region [Glide]
 -keep public class * implements com.bumptech.glide.module.GlideModule
@@ -51,10 +51,7 @@
   **[] $VALUES;
   public *;
 }
-
-# for DexGuard only
--keepresourcexmlelements manifest/application/meta-data@value=GlideModule
-# endregion
+# endregion [Glide]
 
 # region [BaseRecyclerViewAdapterHelper]
 -keep class com.chad.library.adapter.** {
@@ -65,4 +62,21 @@
 -keepclassmembers public class * extends com.chad.library.adapter.base.BaseViewHolder {
      <init>(android.view.View);
 }
-# endregion
+# endregion [BaseRecyclerViewAdapterHelper]
+
+# region [Umeng]
+-keep class com.umeng.** {*;}
+
+-keepclassmembers class * {
+   public <init> (org.json.JSONObject);
+}
+
+-keepclassmembers enum * {
+   public static **[] values();
+   public static ** valueOf(java.lang.String);
+}
+
+-keep public class com.qmzhhchsh.yp.R$*{
+   public static final int *;
+}
+# endregion [Umeng]
