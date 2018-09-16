@@ -3,6 +3,9 @@ package net.imknown.imkgithub.web
 import com.facebook.stetho.okhttp3.StethoInterceptor
 import com.google.gson.Gson
 import com.readystatesoftware.chuck.ChuckInterceptor
+import io.reactivex.ObservableTransformer
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.schedulers.Schedulers
 import net.imknown.imkgithub.global.MyApplication
 import net.imknown.imkgithub.web.converter.StringConverterFactory
 import okhttp3.OkHttpClient
@@ -12,13 +15,14 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
-class Factory {
+class RetrofitFactory {
     companion object {
         const val URL_API_GITHUB = "https://api.github.com/"
 
         inline fun <reified T> create(converterFactoryType: Any = Gson::class): T {
-            val loggingInterceptor = HttpLoggingInterceptor()
-            loggingInterceptor.level = HttpLoggingInterceptor.Level.BODY
+            val loggingInterceptor = HttpLoggingInterceptor().apply {
+                level = HttpLoggingInterceptor.Level.BODY
+            }
 
             val client = OkHttpClient.Builder()
                     .addInterceptor(loggingInterceptor)
@@ -42,6 +46,12 @@ class Factory {
                     .build()
 
             return retrofit.create(T::class.java)
+        }
+
+        fun <T> ioToMain(): ObservableTransformer<T, T> = ObservableTransformer { upstream ->
+            upstream.subscribeOn(Schedulers.io())
+                    .unsubscribeOn(Schedulers.io())
+                    .observeOn(AndroidSchedulers.mainThread())
         }
     }
 }

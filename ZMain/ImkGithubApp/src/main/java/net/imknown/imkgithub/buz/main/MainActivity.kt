@@ -35,7 +35,7 @@ class MainActivity : BaseMvpPresenterActivity<MainMvpContract.IView, MainMvpCont
 
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
 
-//        Factory.create<UserUrl>()
+//        RetrofitFactory.create<UserUrl>()
 //                .getUserInfo()
 //                .observeOn(AndroidSchedulers.mainThread())
 //                .subscribeOn(Schedulers.io())

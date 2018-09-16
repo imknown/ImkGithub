@@ -1,9 +1,7 @@
 package net.imknown.imkgithub.buz.main
 
-import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
-import io.reactivex.schedulers.Schedulers
-import net.imknown.imkgithub.web.Factory
+import net.imknown.imkgithub.web.RetrofitFactory
 import net.imknown.imkgithub.web.url.OtherMiscUrl
 
 class MainMvpPresenter(val mvpView: MainMvpContract.IView) : MainMvpContract.IPresenter {
@@ -12,10 +10,9 @@ class MainMvpPresenter(val mvpView: MainMvpContract.IView) : MainMvpContract.IPr
     override lateinit var disposable: Disposable
 
     override fun fetchZen() {
-        disposable = Factory.create<OtherMiscUrl>(String::class)
+        disposable = RetrofitFactory.create<OtherMiscUrl>(String::class)
                 .getZen()
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribeOn(Schedulers.io())
+                .compose(RetrofitFactory.ioToMain())
                 .subscribe({
                     mvpView.showZen(it)
                 }, {
