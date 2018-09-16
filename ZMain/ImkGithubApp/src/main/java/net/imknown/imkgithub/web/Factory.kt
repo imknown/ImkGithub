@@ -12,10 +12,6 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
-
-/**
- * @author imknown on 8/9/17.
- */
 class Factory {
     companion object {
         const val URL_API_GITHUB = "https://api.github.com/"

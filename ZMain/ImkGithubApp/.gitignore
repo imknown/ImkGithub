@@ -1,0 +1,8 @@
+# IntelliJ Idea project files
+*.iml
+
+# Generated files
+/build
+
+# MacOS
+.DS_Store

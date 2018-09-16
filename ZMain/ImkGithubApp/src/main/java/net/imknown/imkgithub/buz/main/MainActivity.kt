@@ -1,4 +1,4 @@
-package net.imknown.imkgithub.module.main
+package net.imknown.imkgithub.buz.main
 
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -7,8 +7,7 @@ import net.imknown.imkgithub.R
 import net.imknown.imkgithub.mvp.BaseMvpPresenterActivity
 import org.jetbrains.anko.longToast
 
-class MainActivity : BaseMvpPresenterActivity(), MainMvpContract.View {
-    private lateinit var mPresenter: MainMvpContract.Presenter
+class MainActivity : BaseMvpPresenterActivity<MainMvpContract.IView, MainMvpContract.IPresenter>(), MainMvpContract.IView {
 
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
@@ -27,6 +26,8 @@ class MainActivity : BaseMvpPresenterActivity(), MainMvpContract.View {
         }
         false
     }
+
+    override fun initPresenter() = MainMvpPresenter(this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -51,7 +52,6 @@ class MainActivity : BaseMvpPresenterActivity(), MainMvpContract.View {
 //                    it.printStackTrace()
 //                })
 
-        mPresenter = MainMvpPresenter(this)
         mPresenter.fetchZen()
     }
 

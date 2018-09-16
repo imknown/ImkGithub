@@ -1,10 +1,10 @@
-package net.imknown.imkgithub.module
+package net.imknown.imkgithub.buz
 
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import net.imknown.imkgithub.R
-import net.imknown.imkgithub.module.main.MainActivity
+import net.imknown.imkgithub.buz.main.MainActivity
 import net.imknown.imkgithub.mvp.BaseActivity
 
 class SplashActivity : BaseActivity() {

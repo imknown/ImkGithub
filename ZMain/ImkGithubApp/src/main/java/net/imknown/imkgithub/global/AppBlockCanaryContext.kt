@@ -6,10 +6,6 @@ import com.github.moduth.blockcanary.internal.BlockInfo
 import java.io.File
 import java.util.*
 
-/**
- * @author Jinhe on 6/13/17.
- */
-
 class AppBlockCanaryContext : BlockCanaryContext() {
 
     /**

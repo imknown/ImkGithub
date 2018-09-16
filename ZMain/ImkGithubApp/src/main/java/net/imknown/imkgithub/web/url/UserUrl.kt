@@ -5,9 +5,6 @@ import io.reactivex.Observable
 import retrofit2.http.GET
 import retrofit2.http.Path
 
-/**
- * @author imknown on 8/9/17.
- */
 interface UserUrl {
     @GET("users/{user}")
     fun getUserInfo(@Path("user") user: String = "imknown"): Observable<UserInfo>

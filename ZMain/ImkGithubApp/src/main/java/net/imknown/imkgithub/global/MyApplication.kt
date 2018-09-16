@@ -6,11 +6,11 @@ import androidx.multidex.MultiDex
 import com.facebook.stetho.Stetho
 import com.github.moduth.blockcanary.BlockCanary
 import com.squareup.leakcanary.LeakCanary
+import com.umeng.analytics.MobclickAgent
+import com.umeng.commonsdk.UMConfigure
 import net.imknown.imkcode.utils.ProcessUtils
+import net.imknown.imkgithub.BuildConfig
 
-/**
- * @author imknown on 8/9/17.
- */
 class MyApplication : Application() {
     override fun onCreate() {
         super.onCreate()
@@ -29,6 +29,17 @@ class MyApplication : Application() {
             // BlockCanaryEx.install(Config(this))
 
             Stetho.initializeWithDefaults(this)
+
+            // region [友盟]
+            UMConfigure.init(this, UMConfigure.DEVICE_TYPE_PHONE, null)
+            UMConfigure.setLogEnabled(BuildConfig.DEBUG)
+            UMConfigure.setEncryptEnabled(true)
+            MobclickAgent.setScenarioType(this, MobclickAgent.EScenarioType.E_UM_NORMAL)
+            MobclickAgent.openActivityDurationTrack(false)
+            // MobclickAgent.setSessionContinueMillis(30_000)
+            // MobclickAgent.setSecret(this, "")
+            // MobclickAgent.setCatchUncaughtExceptions(true)
+            // endregion [友盟]
         }
     }
 
