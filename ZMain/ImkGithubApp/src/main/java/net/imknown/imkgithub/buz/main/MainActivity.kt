@@ -27,7 +27,7 @@ class MainActivity : BaseMvpPresenterActivity<MainMvpContract.IView, MainMvpCont
         false
     }
 
-    override fun initPresenter() = MainMvpPresenter(this)
+    override fun componentInject() = activityComponent.inject(this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

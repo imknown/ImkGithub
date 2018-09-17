@@ -1,18 +1,19 @@
 package net.imknown.imkgithub.mvp
 
 import android.os.Bundle
+import net.imknown.imkgithub.global.BaseActivity
 import org.jetbrains.anko.toast
+import javax.inject.Inject
 
 abstract class BaseMvpPresenterActivity<MvpView : IMvpView, MvpPresenter : IMvpPresenter<MvpView>> : BaseActivity(), IMvpView {
 
+    @Inject
     protected lateinit var mPresenter: MvpPresenter
-
-    abstract fun initPresenter(): MvpPresenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        mPresenter = initPresenter()
+        componentInject()
     }
 
     override fun showMessage(@MessageTypeDef messageType: Int, message: String) {
@@ -22,8 +23,8 @@ abstract class BaseMvpPresenterActivity<MvpView : IMvpView, MvpPresenter : IMvpP
     }
 
     override fun onDestroy() {
-        super.onDestroy()
-
         mPresenter.detachView()
+
+        super.onDestroy()
     }
 }

@@ -1,22 +1,21 @@
 package net.imknown.imkgithub.buz.main
 
-import io.reactivex.disposables.Disposable
 import net.imknown.imkgithub.web.RetrofitFactory
 import net.imknown.imkgithub.web.url.OtherMiscUrl
+import java.lang.ref.WeakReference
+import javax.inject.Inject
 
-class MainMvpPresenter(val mvpView: MainMvpContract.IView) : MainMvpContract.IPresenter {
-    // override var mvpViewWr = WeakReference(mvpView)
-
-    override lateinit var disposable: Disposable
+class MainMvpPresenter @Inject constructor(iView: MainMvpContract.IView) : MainMvpContract.IPresenter {
+    override var iViewWr = WeakReference(iView)
 
     override fun fetchZen() {
-        disposable = RetrofitFactory.create<OtherMiscUrl>(String::class)
+        attachView(RetrofitFactory.create<OtherMiscUrl>(String::class)
                 .getZen()
                 .compose(RetrofitFactory.ioToMain())
                 .subscribe({
-                    mvpView.showZen(it)
+                    iViewWr.get()?.showZen(it)
                 }, {
                     it.printStackTrace()
-                })
+                }))
     }
 }

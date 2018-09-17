@@ -1,7 +1,8 @@
-package net.imknown.imkgithub.mvp
+package net.imknown.imkgithub.global
 
 import androidx.fragment.app.Fragment
 import com.umeng.analytics.MobclickAgent
+import net.imknown.imkgithub.mvp.IMvpView
 
 abstract class BaseFragment : Fragment(), IMvpView {
 

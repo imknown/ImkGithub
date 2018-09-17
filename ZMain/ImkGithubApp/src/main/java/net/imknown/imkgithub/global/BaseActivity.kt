@@ -1,11 +1,20 @@
-package net.imknown.imkgithub.mvp
+package net.imknown.imkgithub.global
 
 import android.content.pm.ActivityInfo
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.umeng.analytics.MobclickAgent
+import net.imknown.imkgithub.di.component.ActivityComponent
+import net.imknown.imkgithub.di.component.DaggerActivityComponent
+import net.imknown.imkgithub.di.module.ActivityModule
 
 abstract class BaseActivity : AppCompatActivity() {
+    protected val activityComponent: ActivityComponent by lazy {
+        DaggerActivityComponent.builder()
+                .activityModule(ActivityModule(this))
+                .applicationComponent(MyApplication.applicationComponent)
+                .build()
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

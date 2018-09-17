@@ -10,6 +10,9 @@ import com.umeng.analytics.MobclickAgent
 import com.umeng.commonsdk.UMConfigure
 import net.imknown.imkcode.utils.ProcessUtils
 import net.imknown.imkgithub.BuildConfig
+import net.imknown.imkgithub.di.component.ApplicationComponent
+import net.imknown.imkgithub.di.component.DaggerApplicationComponent
+import net.imknown.imkgithub.di.module.ApplicationModule
 
 class MyApplication : Application() {
     override fun onCreate() {
@@ -22,7 +25,12 @@ class MyApplication : Application() {
         }
 
         if (ProcessUtils.isDefaultProcess(this)) {
-            sApplication = this
+            application = this
+
+            applicationComponent = DaggerApplicationComponent.builder()
+                    .applicationModule(ApplicationModule(this))
+                    .build()
+            applicationComponent.inject(this)
 
             LeakCanary.install(this)
             BlockCanary.install(this, AppBlockCanaryContext()).start()
@@ -49,6 +57,9 @@ class MyApplication : Application() {
     }
 
     companion object {
-        lateinit var sApplication: Context
+        lateinit var application: Context
+
+        lateinit var applicationComponent: ApplicationComponent
+            private set
     }
 }
