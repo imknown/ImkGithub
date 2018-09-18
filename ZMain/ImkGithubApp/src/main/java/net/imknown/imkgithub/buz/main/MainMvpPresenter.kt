@@ -1,7 +1,10 @@
 package net.imknown.imkgithub.buz.main
 
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.schedulers.Schedulers
 import net.imknown.imkgithub.web.RetrofitFactory
 import net.imknown.imkgithub.web.url.OtherMiscUrl
+import net.imknown.imkgithub.web.url.UserUrl
 import java.lang.ref.WeakReference
 
 class MainMvpPresenter(iView: MainMvpContract.IView) : MainMvpContract.IPresenter {
@@ -13,6 +16,18 @@ class MainMvpPresenter(iView: MainMvpContract.IView) : MainMvpContract.IPresente
                 .compose(RetrofitFactory.ioToMain())
                 .subscribe({
                     iViewWr.get()?.showZen(it)
+                }, {
+                    it.printStackTrace()
+                }))
+    }
+
+    override fun fetchAvatar() {
+        attachView(RetrofitFactory.create<UserUrl>()
+                .getUserInfo()
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io())
+                .subscribe({
+                    iViewWr.get()?.showAvatar(it)
                 }, {
                     it.printStackTrace()
                 }))

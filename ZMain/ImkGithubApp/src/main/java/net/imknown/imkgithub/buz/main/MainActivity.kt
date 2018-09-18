@@ -1,10 +1,13 @@
 package net.imknown.imkgithub.buz.main
 
 import android.os.Bundle
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main.*
 import net.imknown.imkgithub.R
+import net.imknown.imkgithub.global.GlideApp
 import net.imknown.imkgithub.mvp.BaseMvpPresenterActivity
+import net.imknown.imkgithub.web.url.UserUrl
 import org.jetbrains.anko.longToast
 
 class MainActivity : BaseMvpPresenterActivity<MainMvpContract.IView, MainMvpContract.IPresenter>(), MainMvpContract.IView {
@@ -35,27 +38,22 @@ class MainActivity : BaseMvpPresenterActivity<MainMvpContract.IView, MainMvpCont
 
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
 
-//        RetrofitFactory.create<UserUrl>()
-//                .getUserInfo()
-//                .observeOn(AndroidSchedulers.mainThread())
-//                .subscribeOn(Schedulers.io())
-//                .subscribe({
-//                    message.text = it.name
-//
-//                    GlideApp.with(this)
-//                            .load(it.avatarUrl)
-//                            .placeholder(R.mipmap.ic_launcher)
-//                            .error(R.mipmap.ic_launcher_round)
-//                            .transition(DrawableTransitionOptions.withCrossFade())
-//                            .into(ivAvatar)
-//                }, {
-//                    it.printStackTrace()
-//                })
-
         mPresenter.fetchZen()
+        mPresenter.fetchAvatar()
     }
 
     override fun showZen(zen: String) {
         longToast("Github Zen:\n$zen")
+    }
+
+    override fun showAvatar(userInfo: UserUrl.UserInfo) {
+        message.text = userInfo.name
+
+        GlideApp.with(this)
+                .load(userInfo.avatarUrl)
+                .placeholder(R.mipmap.ic_launcher)
+                .error(R.mipmap.ic_launcher_round)
+                .transition(DrawableTransitionOptions.withCrossFade())
+                .into(ivAvatar)
     }
 }
