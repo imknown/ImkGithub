@@ -3,9 +3,8 @@ package net.imknown.imkgithub.buz.main
 import net.imknown.imkgithub.web.RetrofitFactory
 import net.imknown.imkgithub.web.url.OtherMiscUrl
 import java.lang.ref.WeakReference
-import javax.inject.Inject
 
-class MainMvpPresenter @Inject constructor(iView: MainMvpContract.IView) : MainMvpContract.IPresenter {
+class MainMvpPresenter(iView: MainMvpContract.IView) : MainMvpContract.IPresenter {
     override var iViewWr = WeakReference(iView)
 
     override fun fetchZen() {
