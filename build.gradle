@@ -4,18 +4,18 @@ buildscript {
     apply from: "$rootDir/ZMainLib/ImkCode/others/scripts/buildScriptConfig.gradle"
 
     repositories {
-        // google()
+        google()
         // maven { url 'https://maven.google.com/' }
         // maven { url 'https://dl.google.com/dl/android/maven2/' }
-        maven { url 'https://maven.aliyun.com/repository/google' }
+        // maven { url 'https://maven.aliyun.com/repository/google' }
 
-        // jcenter()
-        maven { url 'https://maven.aliyun.com/repository/jcenter' }
+        jcenter()
+        // maven { url 'https://maven.aliyun.com/repository/jcenter' }
 
         // mavenCentral()
-        maven { url 'https://maven.aliyun.com/repository/central' }
+        // maven { url 'https://maven.aliyun.com/repository/central' }
 
-        maven { url 'https://maven.aliyun.com/repository/gradle-plugin' }
+        // maven { url 'https://maven.aliyun.com/repository/gradle-plugin' }
 
         // maven { url 'https://maven.aliyun.com/nexus/content/groups/public/' }
     }
@@ -33,18 +33,18 @@ buildscript {
 
 allprojects {
     repositories {
-        // google()
+        google()
         // maven { url 'https://maven.google.com/' }
         // maven { url 'https://dl.google.com/dl/android/maven2/' }
-        maven { url 'https://maven.aliyun.com/repository/google' }
+        //  maven { url 'https://maven.aliyun.com/repository/google' }
 
-        // jcenter()
-        maven { url 'https://maven.aliyun.com/repository/jcenter' }
+        jcenter()
+        // maven { url 'https://maven.aliyun.com/repository/jcenter' }
 
         // mavenCentral()
-        maven { url 'https://maven.aliyun.com/repository/central' }
+        // maven { url 'https://maven.aliyun.com/repository/central' }
 
-        maven { url 'https://maven.aliyun.com/repository/gradle-plugin' }
+        // maven { url 'https://maven.aliyun.com/repository/gradle-plugin' }
 
         // maven { url 'https://maven.aliyun.com/nexus/content/groups/public/' }
     }
