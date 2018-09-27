@@ -20,7 +20,11 @@ abstract class BaseActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
+
+        componentInject()
     }
+
+    abstract fun componentInject()
 
     override fun onResume() {
         super.onResume()
