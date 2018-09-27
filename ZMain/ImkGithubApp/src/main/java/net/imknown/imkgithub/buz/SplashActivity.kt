@@ -9,6 +9,8 @@ import net.imknown.imkgithub.global.BaseActivity
 import org.jetbrains.anko.sdk25.coroutines.onClick
 
 class SplashActivity : BaseActivity() {
+    override fun componentInject() = activityComponent.inject(this)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
