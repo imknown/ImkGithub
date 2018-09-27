@@ -12,7 +12,6 @@ abstract class BaseActivity : AppCompatActivity() {
     protected val activityComponent: ActivityComponent by lazy {
         DaggerActivityComponent.builder()
                 .activityModule(ActivityModule(this))
-                .applicationComponent(MyApplication.applicationComponent)
                 .build()
     }
 

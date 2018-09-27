@@ -6,7 +6,7 @@ import net.imknown.imkgithub.di.module.ActivityModule
 import net.imknown.imkgithub.di.scope.ActivityScope
 
 @ActivityScope
-@Component(dependencies = [ApplicationComponent::class], modules = [ActivityModule::class])
+@Component(modules = [ActivityModule::class])
 interface ActivityComponent {
     fun inject(mainActivity: MainActivity)
 }
