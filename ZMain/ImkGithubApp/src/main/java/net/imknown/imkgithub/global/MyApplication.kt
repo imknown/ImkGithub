@@ -4,6 +4,7 @@ import android.app.Application
 import android.content.Context
 import androidx.multidex.MultiDex
 import com.facebook.stetho.Stetho
+import com.github.moduth.blockcanary.BlockCanary
 import com.squareup.leakcanary.LeakCanary
 import com.umeng.analytics.MobclickAgent
 import com.umeng.commonsdk.UMConfigure
@@ -24,7 +25,7 @@ class MyApplication : Application() {
             application = this
 
             LeakCanary.install(this)
-            // BlockCanary.install(this, AppBlockCanaryContext()).start()
+            BlockCanary.install(this, AppBlockCanaryContext()).start()
             // BlockCanaryEx.install(Config(this))
 
             Stetho.initializeWithDefaults(this)
