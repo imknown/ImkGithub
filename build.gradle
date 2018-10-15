@@ -4,20 +4,31 @@ buildscript {
     apply from: "$rootDir/ZMainLib/ImkCode/others/scripts/buildScriptConfig.gradle"
 
     repositories {
+        // region [Google]
         google()
         // maven { url 'https://maven.google.com/' }
         // maven { url 'https://dl.google.com/dl/android/maven2/' }
         // maven { url 'https://maven.aliyun.com/repository/google' }
+        // endregion [Google]
 
-        jcenter() /* { url 'http://jcenter.bintray.com/' } */
-        // maven { url 'https://maven.aliyun.com/repository/jcenter' }
+        // region [JCenter]
+        // jcenter()
+        // jcenter() { url 'http://jcenter.bintray.com/' }
+        maven { url 'https://maven.aliyun.com/repository/jcenter' }
+        // endregion [JCenter]
 
+        // region [MavenCentral]
         // mavenCentral()
         // maven { url 'https://maven.aliyun.com/repository/central' }
+        // endregion [MavenCentral]
 
+        // region [GradlePlugin]
         // maven { url 'https://maven.aliyun.com/repository/gradle-plugin' }
+        // endregion [GradlePlugin]
 
+        // region [legacy but still available]
         // maven { url 'https://maven.aliyun.com/nexus/content/groups/public/' }
+        // endregion [legacy but still available]
     }
 
     dependencies {
@@ -33,20 +44,31 @@ buildscript {
 
 allprojects {
     repositories {
+        // region [Google]
         google()
         // maven { url 'https://maven.google.com/' }
         // maven { url 'https://dl.google.com/dl/android/maven2/' }
         // maven { url 'https://maven.aliyun.com/repository/google' }
+        // endregion [Google]
 
-        jcenter() /* { url 'http://jcenter.bintray.com/' } */
-        // maven { url 'https://maven.aliyun.com/repository/jcenter' }
+        // region [JCenter]
+        // jcenter()
+        // jcenter() { url 'http://jcenter.bintray.com/' }
+        maven { url 'https://maven.aliyun.com/repository/jcenter' }
+        // endregion [JCenter]
 
+        // region [MavenCentral]
         // mavenCentral()
         // maven { url 'https://maven.aliyun.com/repository/central' }
+        // endregion [MavenCentral]
 
+        // region [GradlePlugin]
         // maven { url 'https://maven.aliyun.com/repository/gradle-plugin' }
+        // endregion [GradlePlugin]
 
+        // region [legacy but still available]
         // maven { url 'https://maven.aliyun.com/nexus/content/groups/public/' }
+        // endregion [legacy but still available]
     }
 }
 
