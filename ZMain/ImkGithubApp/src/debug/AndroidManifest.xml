@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="net.imknown.imkgithub">
+
+    <application
+        android:name=".MyDebugApplication"
+        tools:ignore="GoogleAppIndexingWarning"
+        tools:replace="android:name" />
+</manifest>
