@@ -1,6 +1,9 @@
 # ImkGithub
 My Github client. This is a modern project??
 
+# Init
+`git submodule update --init --recursive`
+
 # License
     Copyright 2017 imknown
 
