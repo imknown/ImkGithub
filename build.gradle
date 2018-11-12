@@ -12,9 +12,9 @@ buildscript {
         // endregion [Google]
 
         // region [JCenter]
-        // jcenter()
+        jcenter()
         // jcenter() { url 'http://jcenter.bintray.com/' }
-        maven { url 'https://maven.aliyun.com/repository/jcenter' }
+        // maven { url 'https://maven.aliyun.com/repository/jcenter' }
         // endregion [JCenter]
 
         // region [MavenCentral]
@@ -52,9 +52,9 @@ allprojects {
         // endregion [Google]
 
         // region [JCenter]
-        // jcenter()
+        jcenter()
         // jcenter() { url 'http://jcenter.bintray.com/' }
-        maven { url 'https://maven.aliyun.com/repository/jcenter' }
+        // maven { url 'https://maven.aliyun.com/repository/jcenter' }
         // endregion [JCenter]
 
         // region [MavenCentral]
