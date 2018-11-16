@@ -149,19 +149,16 @@ dependencies {
     // endregion [Files]
 
     // region [OfficialLibs]
-    implementation "androidx.annotation:annotation:$officialLibs.normal"
-
-    implementation "androidx.appcompat:appcompat:$officialLibs.normal"
-    implementation "com.google.android.material:material:$officialLibs.material"
-    implementation "androidx.constraintlayout:constraintlayout:$officialLibs.constraintLayout"
-
+    implementation "androidx.annotation:annotation:$officialLibs.annotation"
     implementation "androidx.multidex:multidex:$officialLibs.multidex"
+    // implementation "androidx.emoji:emoji-appcompat:$officialLibs.emoji"
+    // implementation "androidx.emoji:emoji-bundled:$officialLibs.emoji"
 
-    implementation "androidx.cardview:cardview:$officialLibs.normal"
-    implementation "androidx.recyclerview:recyclerview:$officialLibs.normal"
-
-    // implementation "androidx.emoji:emoji-appcompat:$officialLibs.normal"
-    // implementation "androidx.emoji:emoji-bundled:$officialLibs.normal"
+    implementation "androidx.appcompat:appcompat:$officialLibs.appCompat"
+    implementation "com.google.android.material:material:$officialLibs.material"
+    implementation "androidx.cardview:cardview:$officialLibs.cardView"
+    implementation "androidx.recyclerview:recyclerview:$officialLibs.recyclerView"
+    implementation "androidx.constraintlayout:constraintlayout:$officialLibs.constraintLayout"
     // endregion [OfficialLibs]
 
     // region [Debug]
