@@ -6,7 +6,7 @@ import kotlinx.android.synthetic.main.activity_splash.*
 import net.imknown.imkgithub.R
 import net.imknown.imkgithub.buz.main.MainActivity
 import net.imknown.imkgithub.global.BaseActivity
-import org.jetbrains.anko.sdk25.coroutines.onClick
+import org.jetbrains.anko.sdk27.coroutines.onClick
 
 class SplashActivity : BaseActivity() {
     override fun componentInject() = activityComponent.inject(this)
