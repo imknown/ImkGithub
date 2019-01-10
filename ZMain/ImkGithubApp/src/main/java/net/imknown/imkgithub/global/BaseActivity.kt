@@ -11,8 +11,8 @@ import net.imknown.imkgithub.di.module.ActivityModule
 abstract class BaseActivity : AppCompatActivity() {
     protected val activityComponent: ActivityComponent by lazy {
         DaggerActivityComponent.builder()
-                .activityModule(ActivityModule(this))
-                .build()
+            .activityModule(ActivityModule(this))
+            .build()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -14,6 +14,7 @@ class ActivityModule(private val mActivity: BaseActivity) {
     internal fun provideMainMvpContractIView(): MainMvpContract.IView = mActivity as MainActivity
 
     @Provides
-    internal fun provideMainMvpContractIPresenter(iView: MainMvpContract.IView): MainMvpContract.IPresenter = MainMvpPresenter(iView)
+    internal fun provideMainMvpContractIPresenter(iView: MainMvpContract.IView): MainMvpContract.IPresenter =
+        MainMvpPresenter(iView)
     // endregion [Main]
 }

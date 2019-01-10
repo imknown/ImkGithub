@@ -10,12 +10,12 @@ interface UserUrl {
     fun getUserInfo(@Path("user") user: String = "imknown"): Observable<UserInfo>
 
     data class UserInfo(
-            @SerializedName("avatar_url") val avatarUrl: String,
-            @SerializedName("html_url") val htmlUrl: String,
-            @SerializedName("followers_url") val followersUrl: String,
-            @SerializedName("following_url") val followingUrl: String,
-            val name: String,
-            val location: String,
-            val bio: String
+        @SerializedName("avatar_url") val avatarUrl: String,
+        @SerializedName("html_url") val htmlUrl: String,
+        @SerializedName("followers_url") val followersUrl: String,
+        @SerializedName("following_url") val followingUrl: String,
+        val name: String,
+        val location: String,
+        val bio: String
     )
 }

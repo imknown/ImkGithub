@@ -29,13 +29,22 @@ import java.lang.reflect.Type
  */
 class StringConverterFactory : Converter.Factory() {
 
-    override fun responseBodyConverter(type: Type, annotations: Array<Annotation>, retrofit: Retrofit): Converter<ResponseBody, String> {
+    override fun responseBodyConverter(
+        type: Type,
+        annotations: Array<Annotation>,
+        retrofit: Retrofit
+    ): Converter<ResponseBody, String> {
         return Converter {
             it.string()
         }
     }
 
-    override fun requestBodyConverter(type: Type, parameterAnnotations: Array<Annotation>, methodAnnotations: Array<Annotation>, retrofit: Retrofit): Converter<String, RequestBody> {
+    override fun requestBodyConverter(
+        type: Type,
+        parameterAnnotations: Array<Annotation>,
+        methodAnnotations: Array<Annotation>,
+        retrofit: Retrofit
+    ): Converter<String, RequestBody> {
         return Converter {
             RequestBody.create(MEDIA_TYPE, it)
         }

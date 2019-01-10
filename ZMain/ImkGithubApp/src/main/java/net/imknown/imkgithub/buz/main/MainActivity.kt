@@ -10,7 +10,8 @@ import net.imknown.imkgithub.mvp.BaseMvpPresenterActivity
 import net.imknown.imkgithub.web.url.UserUrl
 import org.jetbrains.anko.longToast
 
-class MainActivity : BaseMvpPresenterActivity<MainMvpContract.IView, MainMvpContract.IPresenter>(), MainMvpContract.IView {
+class MainActivity : BaseMvpPresenterActivity<MainMvpContract.IView, MainMvpContract.IPresenter>(),
+    MainMvpContract.IView {
 
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
@@ -50,10 +51,10 @@ class MainActivity : BaseMvpPresenterActivity<MainMvpContract.IView, MainMvpCont
         message.text = userInfo.name
 
         GlideApp.with(this)
-                .load(userInfo.avatarUrl)
-                .placeholder(R.mipmap.ic_launcher)
-                .error(R.mipmap.ic_launcher_round)
-                .transition(DrawableTransitionOptions.withCrossFade())
-                .into(ivAvatar)
+            .load(userInfo.avatarUrl)
+            .placeholder(R.mipmap.ic_launcher)
+            .error(R.mipmap.ic_launcher_round)
+            .transition(DrawableTransitionOptions.withCrossFade())
+            .into(ivAvatar)
     }
 }

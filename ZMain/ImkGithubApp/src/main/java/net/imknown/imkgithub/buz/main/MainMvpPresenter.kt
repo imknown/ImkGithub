@@ -11,18 +11,21 @@ class MainMvpPresenter(iView: MainMvpContract.IView) : MainMvpContract.IPresente
     override var iViewWr = WeakReference(iView)
 
     override fun fetchZen() {
-        attachView(RetrofitFactory.create<OtherMiscUrl>(String::class)
+        attachView(
+            RetrofitFactory.create<OtherMiscUrl>(String::class)
                 .getZen()
                 .compose(RetrofitFactory.ioToMain())
                 .subscribe({
                     iViewWr.get()?.showZen(it)
                 }, {
                     it.printStackTrace()
-                }))
+                })
+        )
     }
 
     override fun fetchAvatar() {
-        attachView(RetrofitFactory.create<UserUrl>()
+        attachView(
+            RetrofitFactory.create<UserUrl>()
                 .getUserInfo()
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
@@ -30,6 +33,7 @@ class MainMvpPresenter(iView: MainMvpContract.IView) : MainMvpContract.IPresente
                     iViewWr.get()?.showAvatar(it)
                 }, {
                     it.printStackTrace()
-                }))
+                })
+        )
     }
 }
