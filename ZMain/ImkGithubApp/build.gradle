@@ -165,6 +165,7 @@ dependencies {
     debugImplementation "com.squareup.leakcanary:leakcanary-android:$thirdParties.leakCanary"
     releaseImplementation "com.squareup.leakcanary:leakcanary-android-no-op:$thirdParties.leakCanary"
     testImplementation "com.squareup.leakcanary:leakcanary-android-no-op:$thirdParties.leakCanary"
+    // debugImplementation "com.squareup.leakcanary:leakcanary-support-fragment:$thirdParties.leakCanary"
 
     debugImplementation "com.github.markzhai:blockcanary-android:$thirdParties.blockCanary"
     releaseImplementation "com.github.markzhai:blockcanary-no-op:$thirdParties.blockCanary"
