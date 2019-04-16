@@ -75,7 +75,6 @@ android {
                     // "$rootDir/ZMainLib/ImkCode/others/proguards/proguard-rules-base.pro",
                     'proguard-rules.pro'
             // local.properties: ${sdk.dir}/tools/proguard/proguard-android.txt
-            useProguard false
 
             signingConfig signingConfigs.release
 
