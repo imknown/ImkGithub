@@ -1,6 +1,5 @@
 package net.imknown.imkgithub.global
 
-import android.content.pm.ActivityInfo
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.umeng.analytics.MobclickAgent
@@ -18,7 +17,7 @@ abstract class BaseActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
+        // requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
 
         componentInject()
     }
