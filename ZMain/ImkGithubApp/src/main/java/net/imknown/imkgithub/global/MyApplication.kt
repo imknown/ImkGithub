@@ -3,7 +3,6 @@ package net.imknown.imkgithub.global
 import android.app.Application
 import android.content.Context
 import androidx.multidex.MultiDex
-import com.squareup.leakcanary.LeakCanary
 import com.umeng.analytics.MobclickAgent
 import com.umeng.commonsdk.UMConfigure
 import net.imknown.imkcode.utils.ProcessUtils
@@ -13,11 +12,7 @@ open class MyApplication : Application() {
     override fun onCreate() {
         super.onCreate()
 
-        if (LeakCanary.isInAnalyzerProcess(this)
-            || !ProcessUtils.isDefaultProcess(this)
-        ) {
-            // This process is dedicated to LeakCanary for heap analysis.
-            // You should not init your app in this process.
+        if (!ProcessUtils.isDefaultProcess(this)) {
             return
         }
 
