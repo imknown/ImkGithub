@@ -169,9 +169,9 @@ dependencies {
     // region [Debug]
     debugImplementation "com.squareup.leakcanary:leakcanary-android:$thirdParties.leakCanary"
 
-    debugImplementation "com.github.markzhai:blockcanary-android:$thirdParties.blockCanary"
-    releaseImplementation "com.github.markzhai:blockcanary-no-op:$thirdParties.blockCanary"
-    testImplementation "com.github.markzhai:blockcanary-no-op:$thirdParties.blockCanary"
+    // debugImplementation "com.github.markzhai:blockcanary-android:$thirdParties.blockCanary"
+    // releaseImplementation "com.github.markzhai:blockcanary-no-op:$thirdParties.blockCanary"
+    // testImplementation "com.github.markzhai:blockcanary-no-op:$thirdParties.blockCanary"
 
     // debugImplementation "com.letv.sarrsdesktop:BlockCanaryExJRT:$thirdParties.blockCanaryEx"
     // releaseImplementation "com.letv.sarrsdesktop:BlockCanaryExJRTNoOp:$thirdParties.blockCanaryEx"

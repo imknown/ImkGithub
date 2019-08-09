@@ -20,10 +20,10 @@ open class MyApplication : Application() {
 
         initDebugConfig()
 
-        initUmeng()
+        // initUmeng()
     }
 
-    open fun initUmeng() {
+    private fun initUmeng() {
         UMConfigure.init(this, UMConfigure.DEVICE_TYPE_PHONE, null)
         UMConfigure.setLogEnabled(BuildConfig.DEBUG)
         UMConfigure.setEncryptEnabled(true)
