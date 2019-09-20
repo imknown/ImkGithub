@@ -1,6 +1,7 @@
 package net.imknown.imkgithub.buz.main
 
 import android.os.Bundle
+import android.widget.Toast
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main.*
@@ -8,10 +9,8 @@ import net.imknown.imkgithub.R
 import net.imknown.imkgithub.global.GlideApp
 import net.imknown.imkgithub.mvp.BaseMvpPresenterActivity
 import net.imknown.imkgithub.web.url.UserUrl
-import org.jetbrains.anko.longToast
 
-class MainActivity : BaseMvpPresenterActivity<MainMvpContract.IView, MainMvpContract.IPresenter>(),
-    MainMvpContract.IView {
+class MainActivity : BaseMvpPresenterActivity<MainMvpContract.IView, MainMvpContract.IPresenter>(), MainMvpContract.IView {
 
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
@@ -44,7 +43,7 @@ class MainActivity : BaseMvpPresenterActivity<MainMvpContract.IView, MainMvpCont
     }
 
     override fun showZen(zen: String) {
-        longToast("Github Zen:\n$zen")
+        Toast.makeText(this, "Github Zen:\n$zen", Toast.LENGTH_LONG).show()
     }
 
     override fun showAvatar(userInfo: UserUrl.UserInfo) {

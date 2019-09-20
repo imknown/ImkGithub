@@ -1,10 +1,11 @@
 package net.imknown.imkgithub.mvp
 
+import android.widget.Toast
 import net.imknown.imkgithub.global.BaseActivity
-import org.jetbrains.anko.toast
 import javax.inject.Inject
 
-abstract class BaseMvpPresenterActivity<MvpView : IMvpView, MvpPresenter : IMvpPresenter<MvpView>> : BaseActivity(),
+abstract class BaseMvpPresenterActivity<MvpView : IMvpView, MvpPresenter : IMvpPresenter<MvpView>> :
+    BaseActivity(),
     IMvpView {
 
     @Inject
@@ -12,7 +13,7 @@ abstract class BaseMvpPresenterActivity<MvpView : IMvpView, MvpPresenter : IMvpP
 
     override fun showMessage(@MessageTypeDef messageType: Int, message: String) {
         if (messageType == MessageType.Toast) {
-            toast(message)
+            Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
         }
     }
 
