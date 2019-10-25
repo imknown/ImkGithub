@@ -29,6 +29,8 @@ buildscript {
         // region [legacy but still available]
         // maven { url 'https://maven.aliyun.com/nexus/content/groups/public/' }
         // endregion [legacy but still available]
+
+        maven { url 'https://dl.bintray.com/kotlin/kotlin-eap' }
     }
 
     dependencies {
@@ -69,6 +71,8 @@ allprojects {
         // region [legacy but still available]
         // maven { url 'https://maven.aliyun.com/nexus/content/groups/public/' }
         // endregion [legacy but still available]
+
+        maven { url 'https://dl.bintray.com/kotlin/kotlin-eap' }
     }
 }
 
